@@ -6,8 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
-public class SqlConnector {
-    private static String getConnectionString()
+public class SqlConnector implements IConnector {
+    private String getConnectionString()
     {
         String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         String iconConfigPath = rootPath + "config.xml";
@@ -21,7 +21,7 @@ public class SqlConnector {
         System.out.println(connectionStr);
         return connectionStr;
     }
-    public static Connection createConnection()
+    public Connection createConnection()
     {
         String connectionString = getConnectionString();
         Connection sqlConnection;
