@@ -7,6 +7,10 @@ public class Genre {
     {
         genreName = "";
     }
+    public Genre(Genre obj)
+    {
+        this(obj.genreId, obj.genreName);
+    }
     public Genre(String genreName)
     {
         this.genreName = genreName;

@@ -8,6 +8,11 @@ public class Author {
     {
         fullname = "";
     }
+    public Author(Author obj)
+    {
+       this(obj.authorId, obj.fullname);
+    }
+
     public Author(String fullname) {
         this.fullname = fullname;
     }
